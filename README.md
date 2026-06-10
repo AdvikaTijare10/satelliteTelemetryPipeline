@@ -14,26 +14,27 @@ The system provides monitoring of battery voltages, currents, temperatures, powe
 SatNOGS Telemetry API
           │
           ▼
-   Frame Collector
+ Telemetry Ingestion Service
           │
           ▼
-  Telemetry Decoder
+   UWE-4 Beacon Decoder
           │
           ▼
-     MQTT Publisher
+      MQTT Publisher
           │
           ▼
-   Mosquitto Broker
+    Mosquitto Broker
           │
           ▼
-       Telegraf
+        Telegraf
           │
           ▼
-       InfluxDB
+        InfluxDB
           │
           ▼
    Grafana Dashboard
 ```
+
 
 ## Features
 
@@ -84,27 +85,46 @@ The Grafana dashboard provides:
 
 ```text
 project/
-├── telemetry_pipeline.py
-├── telegraf.conf
+├── config/
+│   ├── grafana_dashboard.json
+│   ├── settings.py
+│   └── telegraf.conf
+│
+├── src/
+│   ├── decoder/
+│   ├── docs/
+│   ├── publisher/
+│   └── satnogs/
+│
+├── main.py
 ├── requirements.txt
-├── screenshots/
+├── .env
+├── .gitignore
+├── package.json
+├── package-lock.json
 └── README.md
 ```
 
+
 ## Running the Project
 
-1. Start Mosquitto MQTT Broker
-2. Start InfluxDB
-3. Start Telegraf
-4. Start Grafana
-5. Run the telemetry pipeline script
+The telemetry pipeline requires the following services to be available:
+
+Mosquitto MQTT Broker
+Telegraf
+InfluxDB
+Grafana
+
+Once the supporting services are running, execute:
+
+python main.py
 
 ## Future Work
 
-* Docker Compose deployment
-* Multi-satellite support
-* Telemetry anomaly detection
-* Automated alerting for abnormal telemetry conditions
+* Containerized deployment using Docker Compose
+* Continuous live telemetry ingestion from SatNOGS observations
+* Multi-satellite telemetry support
+* Telemetry anomaly detection and health monitoring
+* Automated alerting for abnormal telemetry condition
 
-```
-```
+
