@@ -65,7 +65,11 @@ The Grafana dashboard provides:
 * Frame processing statistics
 * Decoder success rate monitoring
 
-> Add dashboard screenshot here
+<img width="768" height="347" alt="Image" src="https://github.com/user-attachments/assets/de02c2c0-5568-48b4-b474-ff236dd65cbb" />
+
+<img width="772" height="362" alt="Image" src="https://github.com/user-attachments/assets/1159cbb6-4510-4be1-b8af-f40f56b82fe4" />
+
+<img width="818" height="314" alt="Image" src="https://github.com/user-attachments/assets/6d392cbb-a1b9-4e59-8a1a-38e12eed163c" />
 
 ## Technology Stack
 
