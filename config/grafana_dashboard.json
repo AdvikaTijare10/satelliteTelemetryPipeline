@@ -3,7 +3,7 @@
   "kind": "Dashboard",
   "metadata": {
     "name": "admhfxs",
-    "generation": 64,
+    "generation": 67,
     "creationTimestamp": "2026-06-08T17:06:21Z",
     "labels": {},
     "annotations": {}
@@ -151,7 +151,7 @@
                       "group": "influxdb",
                       "version": "v0",
                       "spec": {
-                        "query": "from(bucket: \"satelliteTelemetry\")\r\n  |>range(start: -3d)\r\n  |>filter(fn: (r)=> r._measurement==\"mqtt_consumer\")\r\n  |>filter(fn: (r)=> r._field==\"batt_b_temp\")\r\n  |> set(key: \"_field\", value: \"Battery_B_Temp\")"
+                        "query": "from(bucket: \"satelliteTelemetry\")\r\n   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |>filter(fn: (r)=> r._measurement==\"mqtt_consumer\")\r\n  |>filter(fn: (r)=> r._field==\"batt_b_temp\")\r\n  |> set(key: \"_field\", value: \"Battery_B_Temp\")"
                       },
                       "labels": {
                         "grafana.app/export-label": "influxdb-1"
@@ -292,7 +292,7 @@
                       "group": "influxdb",
                       "version": "v0",
                       "spec": {
-                        "query": "from(bucket: \"satelliteTelemetry\")\r\n  |>range(start: -3d)\r\n  |>filter(fn :(r)=> r._measurement==\"mqtt_consumer\")\r\n  |>filter(fn :(r)=> r._field==\"batt_b_current\")\r\n  |> set(key: \"_field\", value: \"Battery_B_Current\")"
+                        "query": "from(bucket: \"satelliteTelemetry\")\r\n   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |>filter(fn :(r)=> r._measurement==\"mqtt_consumer\")\r\n  |>filter(fn :(r)=> r._field==\"batt_b_current\")\r\n  |> set(key: \"_field\", value: \"Battery_B_Current\")"
                       },
                       "labels": {
                         "grafana.app/export-label": "influxdb-1"
@@ -1379,7 +1379,7 @@
                       "group": "influxdb",
                       "version": "v0",
                       "spec": {
-                        "query": "from(bucket: \"satelliteTelemetry\")\r\n  |>range(start: -3d)\r\n  |>filter(fn :(r) => r._measurement==\"mqtt_consumer\")\r\n  |>filter(fn :(r) => r._field==\"batt_b_voltage\")\r\n  |> map(fn: (r) => ({ r with _value: float(v: r._value) / 1000.0 }))\r\n  |> set(key: \"_field\", value: \"Battery_B_Voltage\")"
+                        "query": "from(bucket: \"satelliteTelemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |>filter(fn :(r) => r._measurement==\"mqtt_consumer\")\r\n  |>filter(fn :(r) => r._field==\"batt_b_voltage\")\r\n  |> map(fn: (r) => ({ r with _value: float(v: r._value) / 1000.0 }))\r\n  |> set(key: \"_field\", value: \"Battery_B_Voltage\")"
                       },
                       "labels": {
                         "grafana.app/export-label": "influxdb-1"
