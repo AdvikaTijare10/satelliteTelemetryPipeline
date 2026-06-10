@@ -110,9 +110,9 @@ project/
 
 The telemetry pipeline requires the following services to be available:
 
-Mosquitto MQTT Broker
-Telegraf
-InfluxDB
+Mosquitto MQTT Broker,
+Telegraf,
+InfluxDB,
 Grafana
 
 Once the supporting services are running, execute:
