@@ -2,7 +2,7 @@ import subprocess
 import tempfile
 def create_temp_file(raw_frame):    
    
-        binary_data=bytes.fromhex(raw_frame)       
+        binary_data=bytes.fromhex(raw_frame)       #converts hex to bytes
         with tempfile.NamedTemporaryFile(delete=False) as temp_file:
             temp_file.write(binary_data)
             temp_path = temp_file.name
@@ -11,7 +11,7 @@ def create_temp_file(raw_frame):
 
 def decode_frame(temp_path):
 
-    result = subprocess.run(
+    result = subprocess.run(  #the decoder expects a file and not just some variable
         ["decode_frame", "uwe4", temp_path],
         capture_output=True,
         text=True

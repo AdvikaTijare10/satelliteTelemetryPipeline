@@ -10,13 +10,4 @@
 | power_consumption       | W       | Power consumption             |
 | subsystem_status_bitmap | Integer | Health status                 |
 
-| Field             | Unit | Min  | Max |
-| ----------------- | ---- | ---- | --- |
-| batt_a_voltage    | V    | 3.8  | 4.2 |
-| batt_b_voltage    | V    | 3.8  | 4.2 |
-| batt_a_current    | mA   | -350 | 230 |
-| batt_b_current    | mA   | -350 | 230 |
-| batt_a_temp       | °C   | 10   | 14  |
-| batt_b_temp       | °C   | 10   | 14  |
-| obc_temp          | °C   | 16   | 18  |
-| power_consumption | W    | 0.5  | 1.5 |
+

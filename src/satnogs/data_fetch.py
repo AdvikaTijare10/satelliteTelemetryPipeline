@@ -1,5 +1,4 @@
 import time
-import os
 import requests
 from config.settings import SATELLITE_ID,URL,API_KEY
 
@@ -40,7 +39,7 @@ def get_frames_from_satNGOS():
             print(response.text)
             break
 
-        data = response.json()
+        data = response.json()  #gives respnses like {{"timestamp": , "frame":},{},{}...}
         
 
         for item in data["results"]:
@@ -54,3 +53,5 @@ def get_frames_from_satNGOS():
 
    
     return frames
+
+

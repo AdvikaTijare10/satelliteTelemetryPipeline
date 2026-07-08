@@ -10,3 +10,4 @@ SATELLITE_ID = "43880"
 
 MQTT_HOST = "localhost"
 MQTT_PORT = 1883
+
