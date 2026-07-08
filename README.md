@@ -57,6 +57,10 @@ SatNOGS Telemetry API
 * OBC Temperature
 * Power Consumption
 
+## Telemetry recieved after decoding, parsing and extracting required fields
+
+<img width="812" height="226" alt="Image" src="https://github.com/user-attachments/assets/f371f14a-9763-47c5-8528-2a7ea28f229b" />
+
 ## Dashboard
 
 The Grafana dashboard provides:
