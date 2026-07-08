@@ -104,8 +104,6 @@ project/
 ├── requirements.txt
 ├── .env
 ├── .gitignore
-├── package.json
-├── package-lock.json
 └── README.md
 ```
 
@@ -125,7 +123,7 @@ python main.py
 
 ## Future Work
 
-* Containerized deployment using Docker Compose
+* Containerized deployment using Docker 
 * Continuous live telemetry ingestion from SatNOGS observations
 * Multi-satellite telemetry support
 * Telemetry anomaly detection and health monitoring
